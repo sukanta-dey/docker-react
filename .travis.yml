@@ -1,0 +1,9 @@
+sudo: required
+servives:
+  - docker
+
+before-install:
+  - docker build -t sukantadey/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run sukantadey/docker-react npm run test -- --coverage
